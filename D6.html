@@ -242,8 +242,19 @@
       /* EXTRA ESERCIZIO 15
         Crea una funzione che cambi il colore del h2 con id "changeMyColor" con un colore random ad ogni click ricevuto
       */
+      function randomColors() {
+        return "#" + Math.floor(Math.random() * 16777215).toString(16);
+      }
 
-      const changeColorWithRandom = function () {};
+      const changeColorWithRandom = function () {
+        const h2 = document.getElementById("changeMyColor");
+        h2.style.cursor = "pointer";
+        h2.onclick = function () {
+          h2.style.color = randomColors();
+        };
+      };
+
+      changeColorWithRandom();
     </script>
   </body>
 </html>

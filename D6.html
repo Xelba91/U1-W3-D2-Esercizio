@@ -174,7 +174,9 @@
         */
 
       const paintItGreen = function () {
+        //Seleziono tutte le liste non ordinate
         const ul = document.querySelectorAll("ul");
+        //ciclo per prenderle una ad una e cambio lo stile
         for (let i = 0; i < ul.length; i++) {
           ul[i].style = "background-color: green";
         }
@@ -185,11 +187,14 @@
         */
 
       const makeItClickable = function () {
+        //seleziono h1
         const h1 = document.querySelector("h1");
+        //cambio del cursore al passaggio
         h1.style.cursor = "pointer";
-
-        console.log(h1.innerText.slice(0, -1));
+        // console.log(h1.innerText.slice(0, -1)); prova per arrivare deve serve
+        //funzione onclick
         h1.onclick = function () {
+          //slice per rimuovere l'ultima lettera di una stringa
           h1.innerText = h1.innerText.slice(0, -1);
         };
       };
@@ -198,7 +203,22 @@
          Crea una funzione che, al click sul footer, riveli l'URL del link interno come contenuto di un alert()
         */
 
-      const revealFooterLink = function () {};
+      const revealFooterLink = function () {
+        //seleziono il footer
+        const footer = document.querySelector("footer");
+        //cambio il cursore quando si va sul footer
+        footer.style.cursor = "pointer";
+        //funzione al click
+        footer.onclick = function () {
+          //selezionato il link del footer
+          const link = document.querySelector("footer a");
+          //prendo il link da mandare nell avviso
+          const URL = link.getAttribute("href");
+          //genero l'avviso
+          alert(URL);
+        };
+      };
+      revealFooterLink();
 
       /* ESERCIZIO 11
          Crea una funzione che crei una tabella nell'elemento con id "tableArea".
